@@ -32,7 +32,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           <a href="#hero" className="flex items-center space-x-2 group">
             <div className="w-10 h-10 bg-gradient-to-br from-neon-cyan to-neon-purple rounded-lg flex items-center justify-center group-hover:glow-cyan transition-all duration-300">
-              <span className="text-dark-900 font-bold text-lg">H</span>
+              <span className="text-dark-900 font-bold text-lg">X</span>
             </div>
             <span className="text-xl font-bold text-white hidden sm:block">
               XF
