@@ -37,7 +37,7 @@ const Footer = () => {
 
           <div className="flex items-center space-x-4">
             <a
-              href="https://github.com"
+              href="https://github.com/xiaoyann"
               target="_blank"
               rel="noopener noreferrer"
               className="w-8 h-8 rounded-lg border border-gray-700 flex items-center justify-center text-gray-500 hover:text-neon-cyan hover:border-neon-cyan/50 transition-all duration-300"
@@ -53,7 +53,7 @@ const Footer = () => {
               <Globe2 size={16} />
             </a>
             <a
-              href="mailto:zhanghaoran@example.com"
+              href="mailto:0x0886@gmail.com"
               className="w-8 h-8 rounded-lg border border-gray-700 flex items-center justify-center text-gray-500 hover:text-neon-cyan hover:border-neon-cyan/50 transition-all duration-300"
             >
               <MailIcon size={16} />

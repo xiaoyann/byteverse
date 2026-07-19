@@ -65,7 +65,17 @@ const About = () => {
                 <h4 className="text-white font-semibold text-lg mb-2 group-hover:text-neon-cyan transition-colors duration-300">
                   {exp.role}
                 </h4>
-                <p className="text-gray-400">{exp.description}</p>
+                <p className="text-gray-400 mb-3">{exp.description}</p>
+                {exp.award && (
+                  <div className="flex items-center gap-3 mt-4 p-3 rounded-xl bg-neon-cyan/5 border border-neon-cyan/20">
+                    <span className="text-neon-cyan text-sm font-semibold">🏆 {exp.award}</span>
+                    {exp.awardImage && (
+                      <a href={exp.awardImage} target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                        <img src={exp.awardImage} alt={exp.award} className="w-12 h-12 object-cover rounded-lg" />
+                      </a>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
           ))}

@@ -54,7 +54,7 @@ const Navbar = () => {
 
           <div className="hidden lg:flex items-center space-x-4">
             <a
-              href="https://github.com"
+              href="https://github.com/xiaoyann"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-lg border border-gray-700 flex items-center justify-center text-gray-400 hover:text-neon-cyan hover:border-neon-cyan/50 transition-all duration-300"
@@ -100,7 +100,7 @@ const Navbar = () => {
               ))}
               <div className="flex items-center justify-center space-x-4 pt-4 border-t border-gray-800">
                 <a
-                  href="https://github.com"
+                  href="https://github.com/xiaoyann"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-lg border border-gray-700 flex items-center justify-center text-gray-400 hover:text-neon-cyan hover:border-neon-cyan/50 transition-all duration-300"

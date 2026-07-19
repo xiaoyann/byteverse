@@ -80,7 +80,7 @@ const Hero = () => {
 
         <div className="flex items-center justify-center gap-4 mt-12 animate-fade-in" style={{ animationDelay: '1s' }}>
           <a
-            href="https://github.com"
+            href="https://github.com/xiaoyann"
             target="_blank"
             rel="noopener noreferrer"
             className="w-12 h-12 rounded-xl border border-gray-700 flex items-center justify-center text-gray-400 hover:text-neon-cyan hover:border-neon-cyan/50 hover:bg-neon-cyan/5 transition-all duration-300"
@@ -96,7 +96,7 @@ const Hero = () => {
             <Globe2 size={24} />
           </a>
           <a
-            href="mailto:zhanghaoran@example.com"
+            href="mailto:0x0886@gmail.com"
             className="w-12 h-12 rounded-xl border border-gray-700 flex items-center justify-center text-gray-400 hover:text-neon-cyan hover:border-neon-cyan/50 hover:bg-neon-cyan/5 transition-all duration-300"
           >
             <MailIcon size={24} />

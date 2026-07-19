@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MailIcon, Phone, MapPin, GitBranch, Globe2, Send, CheckCircle } from 'lucide-react';
+import { MailIcon, MapPin, GitBranch, Globe2, Send, CheckCircle } from 'lucide-react';
 import { contactData } from '../data';
 
 interface FormData {
@@ -33,7 +33,7 @@ const Contact = () => {
 
   const contactItems: { icon: typeof MailIcon; label: string; value: string; href: string | null }[] = [
     { icon: MailIcon, label: '邮箱', value: contactData.email, href: `mailto:${contactData.email}` },
-    { icon: Phone, label: '电话', value: contactData.phone, href: `tel:${contactData.phone}` },
+    // { icon: Phone, label: '电话', value: contactData.phone, href: `tel:${contactData.phone}` },
     { icon: MapPin, label: '地址', value: contactData.location, href: null },
   ];
 
