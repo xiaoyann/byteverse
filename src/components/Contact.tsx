@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { MailIcon, MapPin, GitBranch, Globe2, Send, CheckCircle } from 'lucide-react';
+import { MailIcon, MapPin, GitBranch, Globe2, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { contactData } from '../data';
+import emailjs from '@emailjs/browser';
 
 interface FormData {
   name: string;
@@ -17,14 +18,39 @@ const Contact = () => {
     message: '',
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 3000);
+    setIsError(false);
+    
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+      setIsSubmitted(true);
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      }, 3000);
+    } catch (error) {
+      setIsError(true);
+      const errorMsg = error instanceof Error ? error.message : '发送失败，请稍后重试';
+      setErrorMessage(errorMsg);
+      setTimeout(() => {
+        setIsError(false);
+        setErrorMessage('');
+      }, 5000);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -162,10 +188,19 @@ const Contact = () => {
 
               <button
                 type="submit"
-                disabled={isSubmitted}
-                className="w-full py-4 bg-gradient-to-r from-neon-cyan to-neon-purple text-dark-900 font-semibold rounded-xl hover:glow-cyan transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-70"
+                disabled={isSubmitted || isError}
+                className={`w-full py-4 font-semibold rounded-xl transition-all duration-300 flex items-center justify-center space-x-2 ${
+                  isError
+                    ? 'bg-red-500/20 text-red-400 border border-red-500/50'
+                    : 'bg-gradient-to-r from-neon-cyan to-neon-purple text-dark-900 hover:glow-cyan disabled:opacity-70'
+                }`}
               >
-                {isSubmitted ? (
+                {isError ? (
+                  <>
+                    <AlertCircle size={20} />
+                    <span>{errorMessage}</span>
+                  </>
+                ) : isSubmitted ? (
                   <>
                     <CheckCircle size={20} />
                     <span>发送成功</span>
