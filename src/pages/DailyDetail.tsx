@@ -32,7 +32,7 @@ const DailyDetail = () => {
   const { older, newer } = useMemo(() => getAdjacentPosts(slug), [slug]);
   const related = useMemo(() => (post ? getRelatedPosts(post) : []), [post]);
 
-  useDocumentTitle(post ? `${post.title} · 技术日报` : '日报不存在 · XF', post?.summary);
+  useDocumentTitle(post ? `${post.title} · AI技术日报` : '日报不存在 · XF', post?.summary);
 
   const handleCopyLink = async () => {
     try {
@@ -73,7 +73,7 @@ const DailyDetail = () => {
             {/* 面包屑 */}
             <nav aria-label="面包屑" className="flex flex-wrap items-center gap-1.5 text-xs text-gray-500">
               <Link to="/daily" className="transition-colors hover:text-neon-cyan">
-                技术日报
+                AI技术日报
               </Link>
               <ChevronRight size={12} />
               <span className="font-mono">{post.date.slice(0, 4)}</span>

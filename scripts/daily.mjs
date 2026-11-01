@@ -126,7 +126,7 @@ function inferTitle({ flags, data, body }) {
   const h1 = /^#\s+(.+)$/m.exec(body);
   if (h1) return h1[1].replace(/[*_`]/g, '').trim();
 
-  return `${today()} 技术日报`;
+  return `${today()} AI技术日报`;
 }
 
 function stripLeadingH1(body, title) {
@@ -274,7 +274,7 @@ function newCommand({ positional }) {
   }
 
   const template = `${buildFrontmatter({
-    title: `${date} 技术日报`,
+    title: `${date} AI技术日报`,
     date,
     summary: '用一句话概括今天的核心进展。',
     tags: DEFAULT_TAGS,

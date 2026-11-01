@@ -177,7 +177,7 @@ function toPost(path: string, raw: string): DailyPost | null {
 
   const { data, body } = parseFrontmatter(raw);
   const date = asString(data.date, slug.match(/\d{4}-\d{2}-\d{2}/)?.[0] ?? '');
-  const title = asString(data.title, `${date} 技术日报`);
+  const title = asString(data.title, `${date} AI技术日报`);
   const content = stripLeadingTitle(body, title);
 
   return {

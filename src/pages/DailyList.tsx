@@ -21,7 +21,7 @@ const DailyList = () => {
   const [activeYear, setActiveYear] = useState<string | null>(null);
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
-  useDocumentTitle('技术日报 · XF', '每天用 WorkBuddy 记录工程实践：踩过的坑、做过的取舍、想清楚的问题。');
+  useDocumentTitle('AI技术日报 · XF', '每天用 WorkBuddy 记录工程实践：踩过的坑、做过的取舍、想清楚的问题。');
 
   const tags = useMemo(() => collectTags(), []);
   const years = useMemo(() => groupByYear(dailyPosts), []);
@@ -60,7 +60,7 @@ const DailyList = () => {
           </span>
 
           <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
-            技术<span className="text-gradient">日报</span>
+            AI技术<span className="text-gradient">日报</span>
           </h1>
 
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-gray-400 sm:text-base">

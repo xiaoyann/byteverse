@@ -20,7 +20,7 @@ const LatestDaily = () => {
               每日更新
             </span>
             <h2 className="text-2xl font-bold text-white sm:text-3xl">
-              技术<span className="text-gradient">日报</span>
+              AI技术<span className="text-gradient">日报</span>
             </h2>
             <p className="mt-2 max-w-xl text-sm text-gray-500">
               用 WorkBuddy 记录每天的工程实践：踩过的坑、做过的取舍、想清楚的问题。

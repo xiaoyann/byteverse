@@ -23,7 +23,7 @@ const NotFound = () => (
           className="inline-flex items-center gap-2 rounded-xl border border-gray-800 px-5 py-3 text-sm font-medium text-gray-300 transition-colors hover:border-neon-cyan/40 hover:text-neon-cyan"
         >
           <ArrowLeft size={16} />
-          看看技术日报
+          看看AI技术日报
         </Link>
       </div>
     </div>
