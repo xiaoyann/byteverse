@@ -14,6 +14,9 @@ dist-ssr
 .env
 .env.*
 
+# AI 助手工作区数据（不属于项目产物）
+.workbuddy
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

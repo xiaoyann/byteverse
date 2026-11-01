@@ -1,37 +1,39 @@
+import { Link } from 'react-router-dom';
 import { Heart, GitBranch, Globe2, MailIcon } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  const links: { name: string; href: string }[] = [
-    { name: '首页', href: '#hero' },
-    { name: '关于我', href: '#about' },
-    { name: '技术栈', href: '#skills' },
-    { name: '作品集', href: '#portfolio' },
-    { name: '博客', href: '#blog' },
-    { name: '联系方式', href: '#contact' },
+  const links: { name: string; to: string }[] = [
+    { name: '首页', to: '/#hero' },
+    { name: '关于我', to: '/#about' },
+    { name: '技术栈', to: '/#skills' },
+    { name: '作品集', to: '/#portfolio' },
+    { name: '博客', to: '/#blog' },
+    { name: '技术日报', to: '/daily' },
+    { name: '联系方式', to: '/#contact' },
   ];
 
   return (
     <footer className="py-12 bg-dark-900 border-t border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-          <div className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-gradient-to-br from-neon-cyan to-neon-purple rounded-lg flex items-center justify-center">
-              <span className="text-dark-900 font-bold text-sm">H</span>
+              <span className="text-dark-900 font-bold text-sm">X</span>
             </div>
             <span className="text-white font-semibold">XF</span>
-          </div>
+          </Link>
 
-          <div className="flex flex-wrap justify-center gap-6">
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-3">
             {links.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
-                className="text-gray-500 hover:text-neon-cyan transition-colors duration-300"
+                to={link.to}
+                className="text-sm text-gray-500 hover:text-neon-cyan transition-colors duration-300"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -40,6 +42,7 @@ const Footer = () => {
               href="https://github.com/xiaoyann"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="GitHub"
               className="w-8 h-8 rounded-lg border border-gray-700 flex items-center justify-center text-gray-500 hover:text-neon-cyan hover:border-neon-cyan/50 transition-all duration-300"
             >
               <GitBranch size={16} />
@@ -48,12 +51,14 @@ const Footer = () => {
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="LinkedIn"
               className="w-8 h-8 rounded-lg border border-gray-700 flex items-center justify-center text-gray-500 hover:text-neon-cyan hover:border-neon-cyan/50 transition-all duration-300"
             >
               <Globe2 size={16} />
             </a>
             <a
               href="mailto:0x0886@gmail.com"
+              aria-label="Email"
               className="w-8 h-8 rounded-lg border border-gray-700 flex items-center justify-center text-gray-500 hover:text-neon-cyan hover:border-neon-cyan/50 transition-all duration-300"
             >
               <MailIcon size={16} />
@@ -62,7 +67,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-8 pt-8 border-t border-gray-800 text-center">
-          <p className="text-gray-500 text-sm flex items-center justify-center space-x-2">
+          <p className="text-gray-500 text-sm flex flex-wrap items-center justify-center gap-2">
             <span>&copy; {currentYear} XF. All rights reserved.</span>
             <span className="text-neon-pink flex items-center">
               <Heart size={14} className="mr-1" />
