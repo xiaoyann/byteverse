@@ -309,10 +309,25 @@ export const blogData: BlogPost[] = [];
 
 export const openSourceData: OpenSourceItem[] = [
   {
+    name: 'react-native-actionsheet',
+    owner: 'beefe',
+    description: 'React Native 的 ActionSheet 组件，用于从底部弹出的操作菜单，纯 JS 实现、无原生依赖。',
+    role: '作者 / 维护者',
+    period: '2016.03 - 2022.12',
+    language: 'JavaScript',
+    license: 'MIT',
+    stars: 1355,
+    forks: 328,
+    repo: 'https://github.com/beefe/react-native-actionsheet',
+    highlights: [
+      '用纯 JavaScript 实现弹层交互与手势，避免引入原生模块',
+      '被 328 个仓库 fork，长期作为 RN 社区常用交互组件',
+    ],
+  },
+  {
     name: 'react-native-wechat-ios',
     owner: 'beefe',
-    description:
-      '微信 OpenSDK 的 React Native iOS 封装，把登录、分享、支付等原生能力暴露成可以直接调用的 JS API。',
+    description: '微信 OpenSDK 的 React Native iOS 封装，把登录、分享、支付等原生能力暴露成 JS API。',
     role: '作者 / 维护者',
     period: '2015.12 - 2018.07',
     language: 'Objective-C',
@@ -321,9 +336,24 @@ export const openSourceData: OpenSourceItem[] = [
     forks: 32,
     repo: 'https://github.com/beefe/react-native-wechat-ios',
     highlights: [
-      '用 Objective-C 编写原生桥接层，封装微信登录、分享、支付三类能力',
-      '处理 RN 与原生 SDK 之间的生命周期、回调投递与线程切换问题',
-      'RN 生态早期少见的中文场景原生模块，长期被其他项目直接引用',
+      'Objective-C 编写原生桥接层，封装微信登录、分享、支付三类能力',
+      '处理 RN 与原生 SDK 之间的生命周期、回调投递与线程切换',
+    ],
+  },
+  {
+    name: 'smart-ui',
+    owner: 'xiaoyann',
+    description: 'Vue 2 移动端 UI 组件库，含文档站点与示例（早期项目，已停止维护）。',
+    role: '作者',
+    period: '2016.12 - 2017.08',
+    language: 'Vue',
+    license: 'MIT',
+    stars: 11,
+    forks: 1,
+    repo: 'https://github.com/xiaoyann/smart-ui',
+    highlights: [
+      '按移动优先的设计约定组织组件 API 与样式变量',
+      '配套 GitHub Pages 文档站，边写组件边沉淀用法示例',
     ],
   },
 ];

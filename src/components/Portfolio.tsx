@@ -1,5 +1,7 @@
-import { ArrowRight, ArrowUpRight, GitBranch, Star } from 'lucide-react';
+import { ArrowRight, Star } from 'lucide-react';
 import { openSourceData, portfolioData } from '../data';
+
+const totalStars = openSourceData.reduce((sum, item) => sum + item.stars, 0);
 
 const Portfolio = () => {
   return (
@@ -94,71 +96,56 @@ const Portfolio = () => {
 
         {openSourceData.length > 0 && (
           <div className="mt-16">
-            <div className="mb-5 flex items-center gap-4">
+            <div className="mb-5 flex flex-wrap items-center gap-x-3 gap-y-2">
               <h3 className="text-lg font-semibold text-white">开源项目</h3>
-              <span className="h-px flex-1 bg-gradient-to-r from-gray-800 to-transparent" />
+              <span className="rounded-full bg-neon-cyan/10 px-2.5 py-0.5 font-mono text-[11px] text-neon-cyan">
+                {openSourceData.length} 个 · 累计 {totalStars.toLocaleString()} ★
+              </span>
+              <span className="hidden h-px flex-1 bg-gradient-to-r from-gray-800 to-transparent sm:block" />
             </div>
 
-            {openSourceData.map((item) => (
-              <a
-                key={item.name}
-                href={item.repo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block rounded-2xl border border-gray-800 bg-dark-700/40 p-6 transition-all duration-300 hover:border-neon-cyan/40 hover:bg-dark-700/60 sm:p-8"
-              >
-                <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
-                  <div className="min-w-0 flex-1">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <GitBranch size={16} className="text-neon-cyan/70" />
-                      <span className="font-mono text-sm text-gray-500">{item.owner} /</span>
-                      <span className="font-mono text-base font-semibold text-white transition-colors group-hover:text-neon-cyan">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {openSourceData.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.repo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex flex-col rounded-2xl border border-gray-800 bg-dark-700/40 p-5 transition-all duration-300 hover:border-neon-cyan/40 hover:bg-dark-700/60"
+                >
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="min-w-0">
+                      <h4 className="truncate font-mono text-sm font-semibold text-white transition-colors duration-300 group-hover:text-neon-cyan">
                         {item.name}
-                      </span>
-                      <ArrowUpRight
-                        size={14}
-                        className="text-gray-600 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-neon-cyan"
-                      />
+                      </h4>
+                      <span className="font-mono text-[11px] text-gray-600">{item.owner}</span>
                     </div>
-
-                    <p className="mt-3 text-sm leading-relaxed text-gray-400">{item.description}</p>
-
-                    <ul className="mt-3 space-y-1.5">
-                      {item.highlights.map((line) => (
-                        <li key={line} className="flex items-start gap-2 text-sm text-gray-400">
-                          <span className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-neon-cyan/60" />
-                          <span className="leading-relaxed">{line}</span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[11px] text-gray-600">
-                      <span>{item.role}</span>
-                      <span className="text-gray-700">·</span>
-                      <span>{item.period}</span>
-                      <span className="text-gray-700">·</span>
-                      <span>{item.language}</span>
-                      <span className="text-gray-700">·</span>
-                      <span>{item.license}</span>
-                    </div>
+                    <span className="flex shrink-0 items-center gap-1 font-mono text-sm font-semibold text-neon-cyan">
+                      <Star size={11} />
+                      {item.stars.toLocaleString()}
+                    </span>
                   </div>
 
-                  <div className="flex shrink-0 items-center gap-6 border-t border-gray-800 pt-4 sm:flex-col sm:items-end sm:gap-3 sm:border-l sm:border-t-0 sm:pl-8 sm:pt-0">
-                    <div className="text-left sm:text-right">
-                      <div className="flex items-center gap-1.5 font-mono text-base font-semibold text-neon-cyan sm:justify-end">
-                        <Star size={12} />
-                        {item.stars}
-                      </div>
-                      <div className="text-[11px] text-gray-600">Stars</div>
-                    </div>
-                    <div className="text-left sm:text-right">
-                      <div className="font-mono text-base font-semibold text-gray-300">{item.forks}</div>
-                      <div className="text-[11px] text-gray-600">Forks</div>
-                    </div>
+                  <p className="mt-3 text-[13px] leading-relaxed text-gray-400">{item.description}</p>
+
+                  <ul className="mt-3 flex-1 space-y-1.5">
+                    {item.highlights.map((line) => (
+                      <li key={line} className="flex items-start gap-2 text-[13px] text-gray-500">
+                        <span className="mt-[8px] h-1 w-1 shrink-0 rounded-full bg-neon-cyan/50" />
+                        <span className="leading-relaxed">{line}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-4 flex flex-wrap items-center justify-between gap-x-2 gap-y-1 border-t border-gray-800 pt-3 font-mono text-[11px] text-gray-600">
+                    <span>
+                      {item.language} · {item.license} · {item.forks} forks
+                    </span>
+                    <span className="shrink-0">{item.period}</span>
                   </div>
-                </div>
-              </a>
-            ))}
+                </a>
+              ))}
+            </div>
           </div>
         )}
       </div>
