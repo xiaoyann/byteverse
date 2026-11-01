@@ -15,7 +15,7 @@ const navLinks: NavLink[] = [
   { name: '技术栈', to: '/#skills' },
   { name: '作品集', to: '/#portfolio' },
   { name: '博客', to: '/#blog' },
-  { name: '技术日报', to: '/daily', match: (pathname) => pathname.startsWith('/daily') },
+  { name: 'AI技术日报', to: '/daily', match: (pathname) => pathname.startsWith('/daily') },
   { name: '联系方式', to: '/#contact' },
 ];
 
@@ -41,7 +41,7 @@ const Navbar = () => {
 
   const linkClass = (link: NavLink) => {
     const active = link.match?.(pathname) ?? false;
-    return `relative text-sm transition-colors duration-300 group ${
+    return `relative whitespace-nowrap text-sm transition-colors duration-300 group ${
       active ? 'text-neon-cyan' : 'text-gray-300 hover:text-neon-cyan'
     }`;
   };

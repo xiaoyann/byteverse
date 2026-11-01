@@ -10,7 +10,7 @@ const Footer = () => {
     { name: '技术栈', to: '/#skills' },
     { name: '作品集', to: '/#portfolio' },
     { name: '博客', to: '/#blog' },
-    { name: '技术日报', to: '/daily' },
+    { name: 'AI技术日报', to: '/daily' },
     { name: '联系方式', to: '/#contact' },
   ];
 
