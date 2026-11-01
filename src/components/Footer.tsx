@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Heart, GitBranch, Globe2, MailIcon } from 'lucide-react';
+import { Heart, GitBranch, MailIcon } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -9,7 +9,6 @@ const Footer = () => {
     { name: '关于我', to: '/#about' },
     { name: '技术栈', to: '/#skills' },
     { name: '作品集', to: '/#portfolio' },
-    { name: '博客', to: '/#blog' },
     { name: 'AI技术日报', to: '/daily' },
     { name: '联系方式', to: '/#contact' },
   ];
@@ -46,15 +45,6 @@ const Footer = () => {
               className="w-8 h-8 rounded-lg border border-gray-700 flex items-center justify-center text-gray-500 hover:text-neon-cyan hover:border-neon-cyan/50 transition-all duration-300"
             >
               <GitBranch size={16} />
-            </a>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              className="w-8 h-8 rounded-lg border border-gray-700 flex items-center justify-center text-gray-500 hover:text-neon-cyan hover:border-neon-cyan/50 transition-all duration-300"
-            >
-              <Globe2 size={16} />
             </a>
             <a
               href="mailto:0x0886@gmail.com"

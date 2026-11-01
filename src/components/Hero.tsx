@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ChevronDown, GitBranch, Globe2, MailIcon, Sparkles } from 'lucide-react';
+import { ChevronDown, GitBranch, MailIcon, Sparkles } from 'lucide-react';
 import { heroData } from '../data';
 
 const Hero = () => {
@@ -86,14 +86,6 @@ const Hero = () => {
             className="w-12 h-12 rounded-xl border border-gray-700 flex items-center justify-center text-gray-400 hover:text-neon-cyan hover:border-neon-cyan/50 hover:bg-neon-cyan/5 transition-all duration-300"
           >
             <GitBranch size={24} />
-          </a>
-          <a
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-12 h-12 rounded-xl border border-gray-700 flex items-center justify-center text-gray-400 hover:text-neon-cyan hover:border-neon-cyan/50 hover:bg-neon-cyan/5 transition-all duration-300"
-          >
-            <Globe2 size={24} />
           </a>
           <a
             href="mailto:0x0886@gmail.com"

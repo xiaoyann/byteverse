@@ -15,7 +15,7 @@ const About = () => {
             我的<span className="text-gradient">职业历程</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            十年磨一剑，专注于前端技术领域，致力于创造卓越的用户体验
+            十二年，从 PHP 服务端到跨端基础设施，把底层能力做进业务里
           </p>
         </div>
 
@@ -66,6 +66,16 @@ const About = () => {
                   {exp.role}
                 </h4>
                 <p className="text-gray-400 mb-3">{exp.description}</p>
+                {exp.highlights && exp.highlights.length > 0 && (
+                  <ul className="space-y-1.5">
+                    {exp.highlights.map((item) => (
+                      <li key={item} className="flex items-start gap-2 text-sm text-gray-400">
+                        <span className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-neon-cyan/70" />
+                        <span className="leading-relaxed">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
                 {exp.award && (
                   <div className="flex items-center gap-3 mt-4 p-3 rounded-xl bg-neon-cyan/5 border border-neon-cyan/20">
                     <span className="text-neon-cyan text-sm font-semibold">🏆 {exp.award}</span>

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MailIcon, MapPin, GitBranch, Globe2, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { MailIcon, MapPin, GitBranch, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { contactData } from '../data';
 import emailjs from '@emailjs/browser';
 
@@ -106,6 +106,17 @@ const Contact = () => {
               })}
             </div>
 
+            <div className="rounded-xl border border-neon-cyan/20 bg-neon-cyan/5 p-4">
+              <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-neon-cyan">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-neon-green opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-neon-green" />
+                </span>
+                当前状态
+              </div>
+              <p className="text-sm leading-relaxed text-gray-300">{contactData.status}</p>
+            </div>
+
             <div className="pt-6">
               <h3 className="text-white font-semibold mb-4">社交媒体</h3>
               <div className="flex items-center space-x-4">
@@ -116,14 +127,6 @@ const Contact = () => {
                   className="w-12 h-12 rounded-xl border border-gray-700 flex items-center justify-center text-gray-400 hover:text-neon-cyan hover:border-neon-cyan/50 hover:bg-neon-cyan/5 transition-all duration-300"
                 >
                   <GitBranch size={24} />
-                </a>
-                <a
-                  href={contactData.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-xl border border-gray-700 flex items-center justify-center text-gray-400 hover:text-neon-cyan hover:border-neon-cyan/50 hover:bg-neon-cyan/5 transition-all duration-300"
-                >
-                  <Globe2 size={24} />
                 </a>
               </div>
             </div>

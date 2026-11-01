@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, GitBranch, Globe2 } from 'lucide-react';
+import { Menu, X, GitBranch } from 'lucide-react';
 
 interface NavLink {
   name: string;
@@ -14,7 +14,6 @@ const navLinks: NavLink[] = [
   { name: '关于我', to: '/#about' },
   { name: '技术栈', to: '/#skills' },
   { name: '作品集', to: '/#portfolio' },
-  { name: '博客', to: '/#blog' },
   { name: 'AI技术日报', to: '/daily', match: (pathname) => pathname.startsWith('/daily') },
   { name: '联系方式', to: '/#contact' },
 ];
@@ -89,15 +88,6 @@ const Navbar = () => {
             >
               <GitBranch size={20} />
             </a>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              className="w-10 h-10 rounded-lg border border-gray-700 flex items-center justify-center text-gray-400 hover:text-neon-cyan hover:border-neon-cyan/50 transition-all duration-300"
-            >
-              <Globe2 size={20} />
-            </a>
             <Link
               to="/#contact"
               className="px-6 py-2.5 bg-gradient-to-r from-neon-cyan to-neon-purple text-dark-900 font-semibold rounded-lg hover:glow-cyan transition-all duration-300"
@@ -146,15 +136,6 @@ const Navbar = () => {
                   className="w-10 h-10 rounded-lg border border-gray-700 flex items-center justify-center text-gray-400 hover:text-neon-cyan hover:border-neon-cyan/50 transition-all duration-300"
                 >
                   <GitBranch size={20} />
-                </a>
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn"
-                  className="w-10 h-10 rounded-lg border border-gray-700 flex items-center justify-center text-gray-400 hover:text-neon-cyan hover:border-neon-cyan/50 transition-all duration-300"
-                >
-                  <Globe2 size={20} />
                 </a>
               </div>
             </div>
