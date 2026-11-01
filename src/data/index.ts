@@ -60,6 +60,20 @@ export interface PortfolioItem {
   tags: string[];
 }
 
+export interface OpenSourceItem {
+  name: string;
+  owner: string;
+  description: string;
+  role: string;
+  period: string;
+  language: string;
+  license: string;
+  stars: number;
+  forks: number;
+  repo: string;
+  highlights: string[];
+}
+
 export interface BlogPost {
   id: number;
   title: string;
@@ -292,6 +306,27 @@ export const portfolioData: PortfolioItem[] = [
 
 /** 首页已改为展示技术日报，旧博客占位数据已清空（组件保留，便于恢复） */
 export const blogData: BlogPost[] = [];
+
+export const openSourceData: OpenSourceItem[] = [
+  {
+    name: 'react-native-wechat-ios',
+    owner: 'beefe',
+    description:
+      '微信 OpenSDK 的 React Native iOS 封装，把登录、分享、支付等原生能力暴露成可以直接调用的 JS API。',
+    role: '作者 / 维护者',
+    period: '2015.12 - 2018.07',
+    language: 'Objective-C',
+    license: 'MIT',
+    stars: 190,
+    forks: 32,
+    repo: 'https://github.com/beefe/react-native-wechat-ios',
+    highlights: [
+      '用 Objective-C 编写原生桥接层，封装微信登录、分享、支付三类能力',
+      '处理 RN 与原生 SDK 之间的生命周期、回调投递与线程切换问题',
+      'RN 生态早期少见的中文场景原生模块，长期被其他项目直接引用',
+    ],
+  },
+];
 
 export const contactData: ContactData = {
   email: '0x0886@gmail.com',
